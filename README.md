@@ -1,16 +1,81 @@
-# React + Vite
+# Website Portofolio — Mochamad Dwi Febriansyah, S.Kom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website portofolio profesional bergaya **Minimalist Neo-Brutalism** yang dibangun dengan Vite + React. 
 
-Currently, two official plugins are available:
+## 🚀 Fitur Utama
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Desain Neo-Brutalism**: Karakter kuat dengan border tebal, warna aksen flat, dan shadow brutal.
+- **Performa Tinggi**: Menggunakan Vite + React sebagai Static Site Generator (SSG).
+- **Zero Database**: Seluruh data (proyek, pengalaman, kontak) disimpan pada file JSON secara lokal sehingga sangat cepat.
+- **Responsif**: Tampilan disesuaikan untuk Mobile, Tablet, dan Desktop.
+- **Smooth Animations**: Transisi dan animasi reveal saat scroll menggunakan Intersection Observer.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 18](https://react.dev/)
+- **Bundler**: [Vite](https://vitejs.dev/)
+- **Styling**: Vanilla CSS (CSS Modules approach)
+- **Deployment**: GitHub Pages (via GitHub Actions)
+- **Fonts**: Space Grotesk, Inter, JetBrains Mono (via Google Fonts)
 
-## Expanding the ESLint configuration
+## 📂 Struktur Proyek
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+d:\web-porto\
+├── index.html                  # SEO & Meta tags
+├── src/
+│   ├── components/             # React components (Navbar, Hero, Projects, dll)
+│   ├── styles/                 # Sistem desain Neo-Brutalism
+│   │   ├── variables.css       # Token desain (warna, bayangan, border)
+│   │   └── ...                 # File CSS spesifik per komponen
+│   ├── data/
+│   │   └── portfolio.js        # 📝 PUSAT DATA PORTFOLIO (edit konten di sini)
+│   └── App.jsx                 # Entry utama aplikasi
+└── public/
+    ├── favicon.svg             # Ikon website
+    └── CV-Mochamad-Dwi-Febriansyah.pdf # File CV untuk diunduh
+```
+
+## 📝 Cara Mengedit Konten Portofolio
+
+Semua data untuk website ini terpusat pada satu file. Anda **tidak perlu mengedit kode komponen React** untuk mengubah teks.
+
+1. Buka file `src/data/portfolio.js`.
+2. Ubah data di dalam object yang tersedia:
+   - `HERO_DATA`: Untuk nama, gelar, dan deskripsi utama.
+   - `TECH_STACK`: Untuk daftar keahlian teknologi Anda.
+   - `PROJECTS`: Untuk daftar portofolio (pastikan link GitHub / Live terisi).
+   - `EXPERIENCE`: Untuk riwayat profesional dan pendidikan.
+   - `ACHIEVEMENTS`: Untuk daftar prestasi dan sertifikasi.
+   - `CONTACT`: Untuk tautan email, GitHub, LinkedIn, dan WhatsApp.
+3. Simpan, dan tampilan website akan otomatis terupdate!
+
+## 💻 Menjalankan Secara Lokal (Development)
+
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/febriansyahcc/website-portofolio.git
+   cd website-portofolio
+   ```
+2. Install dependensi:
+   ```bash
+   npm install
+   ```
+3. Jalankan development server:
+   ```bash
+   npm run dev
+   ```
+4. Buka `http://localhost:5173/` di browser Anda.
+
+## 🌐 Cara Deploy Otomatis ke GitHub Pages
+
+Proyek ini telah dikonfigurasi untuk **deploy otomatis** ke GitHub Pages setiap kali Anda melakukan `push` ke branch `main`.
+
+Ikuti langkah berikut pada repositori GitHub Anda:
+1. Buka halaman GitHub repositori Anda: `https://github.com/febriansyahcc/website-portofolio`
+2. Masuk ke tab **Settings** > **Pages** (di menu sebelah kiri bawah).
+3. Pada bagian **Build and deployment**:
+   - Source: Pilih **GitHub Actions** (bukan "Deploy from a branch").
+4. Selesai! GitHub Actions akan secara otomatis memproses dan menghosting website Anda setiap ada perubahan.
+5. Anda bisa mengecek prosesnya di tab **Actions** pada repositori Anda.
+6. Link website Anda akan tersedia di: `https://febriansyahcc.github.io/website-portofolio/`

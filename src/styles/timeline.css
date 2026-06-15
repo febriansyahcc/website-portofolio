@@ -1,0 +1,257 @@
+/* ============================================================
+   TIMELINE.CSS — Split Timeline Section
+   ============================================================
+   Center-line timeline with items alternating left (professional)
+   and right (academic/community), with year badges and dots.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. SECTION
+   ---------------------------------------------------------- */
+
+.timeline {
+  background-color: var(--bg-primary);
+  padding: var(--space-20) 0;
+}
+
+.timeline__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+
+/* ----------------------------------------------------------
+   2. TIMELINE LABELS
+   ---------------------------------------------------------- */
+
+.timeline__labels {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-16);
+  margin-bottom: var(--space-12);
+}
+
+.timeline__label {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  padding: 8px 20px;
+  border: var(--border);
+  box-shadow: var(--shadow-brutal-sm);
+  text-align: center;
+}
+
+.timeline__label--left {
+  background-color: var(--accent-blue);
+  color: var(--text-light);
+}
+
+.timeline__label--right {
+  background-color: var(--accent-yellow);
+  color: var(--text-primary);
+}
+
+
+/* ----------------------------------------------------------
+   3. TIMELINE TRACK — the center line
+   ---------------------------------------------------------- */
+
+.timeline__track {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8) 0;
+}
+
+/* Vertical center line */
+.timeline__line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--border-color);
+  transform: translateX(-50%);
+}
+
+
+/* ----------------------------------------------------------
+   4. TIMELINE ITEM
+   ---------------------------------------------------------- */
+
+.timeline__item {
+  position: relative;
+  width: 50%;
+  padding: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+/* Left-side items (Professional) */
+.timeline__item--left {
+  left: 0;
+  padding-right: var(--space-10);
+  text-align: right;
+}
+
+/* Right-side items (Academic & Community) */
+.timeline__item--right {
+  left: 50%;
+  padding-left: var(--space-10);
+  text-align: left;
+}
+
+
+/* ----------------------------------------------------------
+   5. TIMELINE DOT
+   ---------------------------------------------------------- */
+
+.timeline__dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: var(--border);
+  top: var(--space-8);
+  z-index: 2;
+}
+
+.timeline__item--left .timeline__dot {
+  right: -10px;
+  background-color: var(--accent-blue);
+}
+
+.timeline__item--right .timeline__dot {
+  left: -10px;
+  background-color: var(--accent-yellow);
+}
+
+/* Connection line from dot to card */
+.timeline__dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 3px;
+  background-color: var(--border-color);
+  transform: translateY(-50%);
+}
+
+.timeline__item--left .timeline__dot::after {
+  left: -28px;
+}
+
+.timeline__item--right .timeline__dot::after {
+  right: -28px;
+}
+
+
+/* ----------------------------------------------------------
+   6. TIMELINE YEAR BADGE
+   ---------------------------------------------------------- */
+
+.timeline__year {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  padding: 4px 16px;
+  border: var(--border);
+  box-shadow: var(--shadow-brutal-sm);
+  margin-bottom: var(--space-3);
+}
+
+
+/* ----------------------------------------------------------
+   7. TIMELINE CARD
+   ---------------------------------------------------------- */
+
+.timeline__card {
+  background-color: var(--bg-white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+  padding: var(--space-6);
+  transition: transform var(--transition-smooth),
+              box-shadow var(--transition-smooth);
+}
+
+.timeline__card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-hover);
+}
+
+.timeline__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.timeline__company {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.timeline__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+
+/* ----------------------------------------------------------
+   8. RESPONSIVE — single column on mobile
+   ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .timeline__labels {
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  /* Shift the center line to the left */
+  .timeline__line {
+    left: 20px;
+    transform: none;
+  }
+
+  /* All items go to the right */
+  .timeline__item,
+  .timeline__item--left,
+  .timeline__item--right {
+    width: 100%;
+    left: 0;
+    padding-left: var(--space-12);
+    padding-right: 0;
+    text-align: left;
+  }
+
+  /* All dots on the left */
+  .timeline__item--left .timeline__dot,
+  .timeline__item--right .timeline__dot {
+    left: 10px;
+    right: auto;
+  }
+
+  /* Connection lines go right */
+  .timeline__item--left .timeline__dot::after,
+  .timeline__item--right .timeline__dot::after {
+    left: auto;
+    right: -28px;
+  }
+
+  .timeline__card {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline__labels {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+}

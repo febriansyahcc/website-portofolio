@@ -1,0 +1,427 @@
+/* ============================================================
+   COMPONENTS.CSS — Reusable Neo-Brutalism Components
+   ============================================================
+   Shared component classes used across multiple sections:
+   buttons, cards, badges, section titles, and floating FAB.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. BUTTON — .btn
+   ----------------------------------------------------------
+   Neo-Brutalism buttons: bold borders, flat fills, chunky
+   offset shadows that shift on hover/active for a tactile,
+   physical "press" feel.
+   ---------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 28px;
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  user-select: none;
+}
+
+/* Hover — lifts up & left, shadow grows */
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-hover);
+}
+
+/* Active — presses down, shadow shrinks */
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-brutal-active);
+}
+
+/* Focus visible for accessibility */
+.btn:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+/* --- Button Variants (BEM double-dash) --- */
+
+.btn--primary,
+.btn-primary {
+  background-color: var(--accent-blue);
+  color: var(--text-light);
+  border-color: var(--border-color);
+}
+
+.btn--primary:hover,
+.btn-primary:hover {
+  background-color: #1D4ED8;
+  color: var(--text-light);
+}
+
+.btn--secondary,
+.btn-secondary {
+  background-color: var(--accent-yellow);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn--secondary:hover,
+.btn-secondary:hover {
+  background-color: #EAB308;
+  color: var(--text-primary);
+}
+
+.btn--dark,
+.btn-dark {
+  background-color: var(--text-primary);
+  color: var(--text-light);
+  border-color: var(--border-color);
+}
+
+.btn--dark:hover,
+.btn-dark:hover {
+  background-color: #1F2937;
+  color: var(--text-light);
+}
+
+.btn--outline,
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn--outline:hover,
+.btn-outline:hover {
+  background-color: var(--text-primary);
+  color: var(--text-light);
+}
+
+.btn--green,
+.btn-green {
+  background-color: var(--accent-green);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn--pink,
+.btn-pink {
+  background-color: var(--accent-pink);
+  color: var(--text-light);
+  border-color: var(--border-color);
+}
+
+/* --- Button Sizes --- */
+
+.btn--small,
+.btn-sm {
+  padding: 8px 16px;
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btn--small:hover,
+.btn-sm:hover {
+  box-shadow: var(--shadow-brutal);
+}
+
+.btn--large,
+.btn-lg {
+  padding: 16px 36px;
+  font-size: var(--text-lg);
+}
+
+/* Icon-only button */
+.btn--icon,
+.btn-icon {
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+}
+
+
+/* ----------------------------------------------------------
+   2. CARD — .card
+   ---------------------------------------------------------- */
+
+.card {
+  background-color: var(--bg-white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+  transition: transform var(--transition-smooth),
+              box-shadow var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-brutal-lg);
+}
+
+/* Card with no hover effect */
+.card-static {
+  background-color: var(--bg-white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+}
+
+
+/* ----------------------------------------------------------
+   3. BADGE — .badge
+   ---------------------------------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  border: var(--border-sm);
+  border-radius: var(--radius);
+  white-space: nowrap;
+  background-color: var(--bg-secondary);
+  transition: all var(--transition-fast);
+}
+
+.badge:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+/* --- Badge Color Variants --- */
+
+.badge--blue,
+.badge-blue {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.badge--yellow,
+.badge-yellow {
+  background-color: #FEF9C3;
+  color: #854D0E;
+}
+
+.badge--green,
+.badge-green {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+.badge--pink,
+.badge-pink {
+  background-color: #FCE7F3;
+  color: #9D174D;
+}
+
+.badge--purple,
+.badge-purple {
+  background-color: #EDE9FE;
+  color: #5B21B6;
+}
+
+.badge--dark,
+.badge-dark {
+  background-color: var(--text-primary);
+  color: var(--text-light);
+}
+
+.badge--outline,
+.badge-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+
+/* ----------------------------------------------------------
+   4. SECTION TITLE — .section-title
+   ---------------------------------------------------------- */
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--weight-black);
+  line-height: 1.1;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-12);
+}
+
+/* Thick accent underline bar */
+.section-title__accent,
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 6px;
+  background-color: var(--accent-yellow);
+  margin-top: var(--space-3);
+  border: var(--border-sm);
+}
+
+/* When using __accent span, hide the ::after */
+.section-title:has(.section-title__accent)::after {
+  display: none;
+}
+
+/* Variant: blue accent bar */
+.section-title--blue .section-title__accent,
+.section-title--blue::after {
+  background-color: var(--accent-blue);
+}
+
+/* Variant: green accent bar */
+.section-title--green .section-title__accent,
+.section-title--green::after {
+  background-color: var(--accent-green);
+}
+
+/* Variant: pink accent bar */
+.section-title--pink .section-title__accent,
+.section-title--pink::after {
+  background-color: var(--accent-pink);
+}
+
+/* Centered section title */
+.section-title--center {
+  text-align: center;
+  display: block;
+}
+
+.section-title--center .section-title__accent,
+.section-title--center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section subtitle text */
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: var(--space-10);
+}
+
+
+/* ----------------------------------------------------------
+   5. FLOATING ACTION BUTTON — .floating-btn
+   ---------------------------------------------------------- */
+
+.floating-btn {
+  position: fixed;
+  bottom: var(--space-8);
+  right: var(--space-8);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-color: var(--accent-blue);
+  color: var(--text-light);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+  cursor: pointer;
+  z-index: var(--z-floating);
+  transition: all var(--transition-base);
+  animation: bounceSubtle 5s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.floating-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-hover);
+  background-color: var(--accent-yellow);
+  color: var(--text-primary);
+  animation-play-state: paused;
+}
+
+.floating-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-brutal-active);
+}
+
+.floating-btn__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.floating-btn__text {
+  font-size: 0.65rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.05em;
+}
+
+@keyframes bounceSubtle {
+  0%, 85%, 100% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-8px);
+  }
+  95% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .floating-btn {
+    bottom: var(--space-4);
+    right: var(--space-4);
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-btn__icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   6. DIVIDER
+   ---------------------------------------------------------- */
+
+.divider {
+  width: 100%;
+  height: 3px;
+  background-color: var(--border-color);
+  border: none;
+  margin: var(--space-10) 0;
+}
+
+.divider-dashed {
+  width: 100%;
+  height: 0;
+  border: none;
+  border-top: 2px dashed var(--border-color);
+  margin: var(--space-10) 0;
+}
+
+
+/* ----------------------------------------------------------
+   7. BACKGROUND UTILITY
+   ---------------------------------------------------------- */
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}

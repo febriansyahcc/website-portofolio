@@ -1,0 +1,179 @@
+/* ============================================================
+   PROJECTS.CSS — Project Showcase Section
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. SECTION
+   ---------------------------------------------------------- */
+
+.projects {
+  background-color: var(--bg-primary);
+  padding: var(--space-20) 0;
+}
+
+.projects__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+
+/* ----------------------------------------------------------
+   2. PROJECT GRID
+   ---------------------------------------------------------- */
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+
+/* ----------------------------------------------------------
+   3. PROJECT CARD
+   ---------------------------------------------------------- */
+
+.project-card {
+  background-color: var(--bg-white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-smooth),
+              box-shadow var(--transition-smooth);
+  overflow: hidden;
+}
+
+/* Colored left border via CSS variable from JSX */
+.project-card__border {
+  height: 6px;
+  background-color: var(--project-color, var(--accent-blue));
+  flex-shrink: 0;
+}
+
+.project-card__body {
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+/* Hover: full card lifts, shadow expands from 4px → 8px */
+.project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-brutal-lg);
+}
+
+/* --- Featured card — spans 2 columns --- */
+.project-card--featured {
+  grid-column: span 2;
+}
+
+.project-card--featured .project-card__border {
+  height: 8px;
+}
+
+
+/* ----------------------------------------------------------
+   4. PROJECT CARD CONTENT
+   ---------------------------------------------------------- */
+
+.project-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.project-card__desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Feature list with custom colored square bullets */
+.project-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.project-card__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Colored square bullet */
+.project-card__bullet {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  border: 1px solid var(--border-color);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+
+/* ----------------------------------------------------------
+   5. PROJECT CARD — BADGES
+   ---------------------------------------------------------- */
+
+.project-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-4);
+}
+
+
+/* ----------------------------------------------------------
+   6. PROJECT CARD — ACTION LINKS
+   ---------------------------------------------------------- */
+
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: var(--border-sm);
+  border-top-style: dashed;
+}
+
+.project-card__coming-soon {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  padding: 6px 0;
+}
+
+
+/* ----------------------------------------------------------
+   7. RESPONSIVE
+   ---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .project-card--featured {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--featured {
+    grid-column: span 1;
+  }
+
+  .project-card__body {
+    padding: var(--space-4) var(--space-6);
+  }
+}

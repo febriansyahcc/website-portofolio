@@ -1,0 +1,286 @@
+/* ============================================================
+   HERO.CSS — Hero / Landing Section
+   ============================================================
+   Full-viewport hero with bold Neo-Brutalism personality:
+   oversized type, geometric decorations, brutal photo frame,
+   and staggered entrance animations.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. HERO CONTAINER
+   ---------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.hero__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: var(--z-base);
+}
+
+
+/* ----------------------------------------------------------
+   2. HERO TEXT CONTENT
+   ---------------------------------------------------------- */
+
+.hero__content {
+  flex: 1;
+  max-width: 640px;
+}
+
+/* Name */
+.hero__name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: var(--weight-black);
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+/* S.Kom degree badge — rotated, yellow, playful */
+.hero__badge {
+  display: inline-block;
+  background-color: var(--accent-yellow);
+  border: var(--border);
+  padding: 4px 16px;
+  font-family: var(--font-heading);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: var(--weight-bold);
+  transform: rotate(-2deg);
+  box-shadow: var(--shadow-brutal-sm);
+  margin-left: var(--space-2);
+  vertical-align: super;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+
+/* Role / job title */
+.hero__role {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: var(--weight-semibold);
+  color: var(--accent-blue);
+  margin-bottom: var(--space-4);
+}
+
+/* Summary / bio */
+.hero__summary {
+  max-width: 600px;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+
+/* ----------------------------------------------------------
+   3. HERO CTA BUTTONS
+   ---------------------------------------------------------- */
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+
+/* ----------------------------------------------------------
+   4. HERO PHOTO
+   ---------------------------------------------------------- */
+
+.hero__photo-wrapper {
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Decorative colored block behind photo */
+.hero__photo-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-color: var(--accent-yellow);
+  border: var(--border);
+  top: 16px;
+  left: 16px;
+  z-index: 0;
+}
+
+.hero__photo {
+  width: 220px;
+  height: 220px;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  position: relative;
+  z-index: 1;
+}
+
+.hero__initials {
+  font-size: 4rem;
+  font-weight: var(--weight-black);
+  color: var(--text-muted);
+  user-select: none;
+}
+
+
+/* ----------------------------------------------------------
+   5. DECORATIVE GEOMETRIC SHAPES
+   ---------------------------------------------------------- */
+
+.hero__shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blue square — top right */
+.hero__shape--1 {
+  width: 120px;
+  height: 120px;
+  background-color: var(--accent-blue);
+  border: var(--border);
+  top: 12%;
+  right: 5%;
+  opacity: 0.12;
+  transform: rotate(15deg);
+}
+
+/* Yellow circle — bottom left */
+.hero__shape--2 {
+  width: 80px;
+  height: 80px;
+  background-color: var(--accent-yellow);
+  border: var(--border);
+  border-radius: 50%;
+  bottom: 18%;
+  left: 3%;
+  opacity: 0.15;
+}
+
+/* Pink diamond — top left */
+.hero__shape--3 {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-pink);
+  border: var(--border);
+  top: 25%;
+  left: 15%;
+  opacity: 0.1;
+  transform: rotate(45deg);
+}
+
+/* Green rectangle — bottom right */
+.hero__shape--4 {
+  width: 150px;
+  height: 40px;
+  background-color: var(--accent-green);
+  border: var(--border);
+  bottom: 12%;
+  right: 15%;
+  opacity: 0.1;
+  transform: rotate(-8deg);
+}
+
+
+/* ----------------------------------------------------------
+   6. RESPONSIVE
+   ---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .hero__photo,
+  .hero__photo-wrapper::before {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero__initials {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--navbar-height) + var(--space-10));
+    padding-bottom: var(--space-12);
+  }
+
+  .hero__container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: var(--space-8);
+  }
+
+  .hero__content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__summary {
+    max-width: 100%;
+  }
+
+  .hero__cta {
+    justify-content: center;
+  }
+
+  .hero__photo,
+  .hero__photo-wrapper::before {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero__photo-wrapper::before {
+    top: 12px;
+    left: 12px;
+  }
+
+  .hero__initials {
+    font-size: 3rem;
+  }
+
+  /* Hide some decorative shapes on mobile for cleanliness */
+  .hero__shape--3,
+  .hero__shape--4 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__name {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__cta .btn {
+    width: 100%;
+  }
+}

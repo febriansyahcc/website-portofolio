@@ -1,0 +1,145 @@
+/* ============================================================
+   ACHIEVEMENTS.CSS — Achievement / Awards Section
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. SECTION
+   ---------------------------------------------------------- */
+
+.achievements {
+  background-color: var(--bg-secondary);
+  padding: var(--space-20) 0;
+}
+
+.achievements__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+
+/* ----------------------------------------------------------
+   2. ACHIEVEMENT LIST
+   ---------------------------------------------------------- */
+
+.achievements__list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ----------------------------------------------------------
+   3. ACHIEVEMENT ITEM
+   ---------------------------------------------------------- */
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-4);
+  border-bottom: 2px dashed var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+/* First item gets a top border */
+.achievement:first-child {
+  border-top: 2px dashed var(--border-color);
+}
+
+/* Hover — subtle highlight */
+.achievement:hover {
+  background-color: var(--bg-white);
+  padding-left: var(--space-6);
+}
+
+
+/* ----------------------------------------------------------
+   4. ACHIEVEMENT ICON
+   ---------------------------------------------------------- */
+
+.achievement__icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+  border: var(--border);
+  flex-shrink: 0;
+  line-height: 1;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.achievement__emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+
+/* ----------------------------------------------------------
+   5. ACHIEVEMENT CONTENT
+   ---------------------------------------------------------- */
+
+.achievement__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.achievement__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.achievement__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+
+/* ----------------------------------------------------------
+   6. ACHIEVEMENT CHECK
+   ---------------------------------------------------------- */
+
+.achievement__check {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+
+/* ----------------------------------------------------------
+   7. RESPONSIVE
+   ---------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .achievement {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .achievement__icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: var(--text-xl);
+  }
+
+  .achievement__content {
+    flex: 1 1 calc(100% - 56px);
+  }
+
+  .achievement:hover {
+    padding-left: var(--space-4);
+  }
+}

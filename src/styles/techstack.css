@@ -1,0 +1,126 @@
+/* ============================================================
+   TECHSTACK.CSS — Tech Stack / Skills Section
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. SECTION
+   ---------------------------------------------------------- */
+
+.techstack {
+  background-color: var(--bg-secondary);
+  padding: var(--space-20) 0;
+}
+
+.techstack__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+
+/* ----------------------------------------------------------
+   2. CATEGORY GRID
+   ---------------------------------------------------------- */
+
+.techstack__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+
+/* ----------------------------------------------------------
+   3. CATEGORY COLUMN
+   ---------------------------------------------------------- */
+
+.techstack__column {
+  background-color: var(--bg-white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+  padding: var(--space-6);
+  transition: transform var(--transition-smooth),
+              box-shadow var(--transition-smooth);
+}
+
+.techstack__column:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-hover);
+}
+
+.techstack__category {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 4px solid var(--accent-yellow);
+}
+
+/* Alternate accent bar colors per category */
+.techstack__column:nth-child(1) .techstack__category {
+  border-bottom-color: var(--accent-blue);
+}
+
+.techstack__column:nth-child(2) .techstack__category {
+  border-bottom-color: var(--accent-pink);
+}
+
+.techstack__column:nth-child(3) .techstack__category {
+  border-bottom-color: var(--accent-green);
+}
+
+
+/* ----------------------------------------------------------
+   4. TECH ITEMS
+   ---------------------------------------------------------- */
+
+.techstack__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--bg-primary);
+  border: var(--border-sm);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  cursor: default;
+  transition: all var(--transition-fast);
+}
+
+.tech-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-sm);
+  background-color: var(--accent-yellow);
+}
+
+
+/* ----------------------------------------------------------
+   5. RESPONSIVE
+   ---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .techstack__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .techstack__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .techstack__column {
+    padding: var(--space-4);
+  }
+}

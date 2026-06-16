@@ -133,45 +133,45 @@ export const PROJECTS = [
 export const EXPERIENCE = {
   professional: [
     {
-      year: "2025",
-      title: "Full-Stack Web Developer",
-      company: "Timedoor Academy",
+      year: "Feb 2026 - Sekarang",
+      title: "Mitra Teacher",
+      company: "PT. Timedoor Academy",
       description:
-        "Mengembangkan aplikasi web menggunakan Laravel dan React.js untuk klien edukasi teknologi.",
+        "Mengajar pemrograman dengan pendekatan adaptive class yang menyesuaikan materi dan metode pembelajaran berdasarkan kemampuan masing-masing siswa. Membimbing siswa dalam proyek sehingga meningkatkan pemahaman, keterlibatan, dan kemampuan problem solving secara optimal.",
       type: "professional",
     },
     {
-      year: "2024",
-      title: "Web Developer Intern",
-      company: "PDAM Tirta Moedal Semarang",
+      year: "Jun 2025 - Sekarang",
+      title: "Tenaga Kependidikan & Guru Informatika",
+      company: "SMAS Islamic Centre Demak",
       description:
-        "Membangun Sistem Informasi Magang terintegrasi dengan SSO dan TTE untuk digitalisasi proses magang.",
+        "Merancang, menyusun materi, dan menyampaikan pembelajaran Informatika yang interaktif dan aplikatif untuk siswa kelas X, XI, dan XII guna meningkatkan literasi digital dan kemampuan computational thinking mereka. Mengelola administrasi persekolahan serta mendukung operasional tata usaha sekolah secara efisien guna menciptakan lingkungan belajar-mengajar yang kondusif dan teratur.",
       type: "professional",
     },
     {
-      year: "2023",
-      title: "IT Support & Web Developer",
-      company: "SMAS Islamic Centre",
+      year: "Jan 2025 - Apr 2025",
+      title: "Web Developer Intern (Magang)",
+      company: "PDAM Tirta Moedal Kota Semarang",
       description:
-        "Mengelola infrastruktur IT sekolah dan mengembangkan website profil sekolah.",
+        "Mengembangkan sistem manajemen magang berbasis web untuk meningkatkan efisiensi pengelolaan data. Berkolaborasi dalam pengembangan fitur dan debugging untuk meningkatkan performa sistem.",
       type: "professional",
     },
   ],
   academic: [
+    {
+      year: "2023 - 2026",
+      title: "Asisten Laboratorium Komputer",
+      company: "Universitas PGRI Semarang",
+      description:
+        "Meningkatkan kesiapan operasional laboratorium komputer dengan memastikan perawatan dan perbaikan lebih dari 50+ unit perangkat melalui pengecekan rutin dan troubleshooting hardware/software. Mendukung proses akreditasi Program Studi Informatika dengan menyiapkan dan memverifikasi dokumen serta infrastruktur laboratorium. Membantu pelaksanaan praktikum Arsitektur & Organisasi Komputer dan Jaringan Komputer untuk kelas mahasiswa dengan pendampingan teknis dan asistensi langsung.",
+      type: "academic",
+    },
     {
       year: "2025",
       title: "Narasumber Workshop Web Development",
       company: "GDG Semarang",
       description:
         "Menyampaikan materi workshop tentang modern web development dengan Nuxt.js dan Laravel.",
-      type: "academic",
-    },
-    {
-      year: "2024",
-      title: "Asisten Laboratorium Komputer",
-      company: "Universitas PGRI Semarang",
-      description:
-        "Membimbing praktikum mata kuliah Pemrograman Web dan Database.",
       type: "academic",
     },
     {

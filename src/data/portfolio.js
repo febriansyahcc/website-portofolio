@@ -205,9 +205,9 @@ export const ACHIEVEMENTS = [
 ];
 
 export const CONTACT = {
-  email: "dwifebriansyah.dev@gmail.com",
-  github: "https://github.com/dwifebriansyah",
-  linkedin: "https://linkedin.com/in/dwifebriansyah",
+  email: "dwifebriansyah130205@gmail.com",
+  github: "https://github.com/febriansyahcc",
+  linkedin: "https://www.linkedin.com/in/mochamad-dwi-febriansyah-086b6b312/",
   whatsapp: "https://wa.me/6281226047345",
 };
 

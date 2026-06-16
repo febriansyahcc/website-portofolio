@@ -92,7 +92,7 @@ export default function Navbar() {
           ))}
           <li role="none">
             <a
-              href="/CV-Mochamad-Dwi-Febriansyah.pdf"
+              href={`${import.meta.env.BASE_URL}CV-Mochamad-Dwi-Febriansyah.pdf`}
               className="navbar__cv-btn"
               download
               role="menuitem"
@@ -139,7 +139,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          href="/CV-Mochamad-Dwi-Febriansyah.pdf"
+          href={`${import.meta.env.BASE_URL}CV-Mochamad-Dwi-Febriansyah.pdf`}
           className="navbar__cv-btn navbar__cv-btn--mobile"
           download
           role="menuitem"

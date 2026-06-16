@@ -42,7 +42,7 @@ export default function Hero() {
               {cta.primary.text}
             </a>
             <a
-              href={cta.secondary.target}
+              href={`${import.meta.env.BASE_URL}${cta.secondary.target.replace(/^\//, '')}`}
               className="btn btn--secondary"
               download
               aria-label={cta.secondary.text}

@@ -3,7 +3,7 @@ import '../styles/components.css';
 export default function FloatingCV() {
   return (
     <a
-      href="/CV-Mochamad-Dwi-Febriansyah.pdf"
+      href={`${import.meta.env.BASE_URL}CV-Mochamad-Dwi-Febriansyah.pdf`}
       download
       className="floating-btn"
       aria-label="Download CV"

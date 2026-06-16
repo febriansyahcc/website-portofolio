@@ -137,6 +137,11 @@
   z-index: 1;
 }
 
+.hero__photo-img {
+  object-fit: cover;
+  object-position: top;
+}
+
 .hero__initials {
   font-size: 4rem;
   font-weight: var(--weight-black);

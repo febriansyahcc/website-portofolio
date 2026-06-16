@@ -7,6 +7,7 @@ export const HERO_DATA = {
   name: "Mochamad Dwi Febriansyah",
   title: "S.Kom",
   role: "Full-Stack Developer",
+  photo: "/profile.jpg",
   summary:
     "Fresh Graduate Informatika dengan pengalaman membangun aplikasi web skala enterprise. Terampil dalam Laravel, React, dan Nuxt.js dengan rekam jejak nyata di proyek pemerintah, event teknologi nasional, dan komunitas developer.",
   cta: {

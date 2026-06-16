@@ -2,7 +2,7 @@ import { HERO_DATA } from '../data/portfolio';
 import '../styles/hero.css';
 
 export default function Hero() {
-  const { name, title, role, summary, cta } = HERO_DATA;
+  const { name, title, role, summary, cta, photo } = HERO_DATA;
 
   const handleScrollTo = (e, target) => {
     e.preventDefault();
@@ -52,11 +52,15 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: photo placeholder */}
+        {/* Right: photo */}
         <div className="hero__photo-wrapper animate-on-scroll">
-          <div className="hero__photo" aria-label="Photo of Mochamad Dwi Febriansyah">
-            <span className="hero__initials font-heading">MDF</span>
-          </div>
+          {photo ? (
+            <img src={`${import.meta.env.BASE_URL}${photo.replace(/^\//, '')}`} alt={`Photo of ${name}`} className="hero__photo hero__photo-img" />
+          ) : (
+            <div className="hero__photo" aria-label={`Photo of ${name}`}>
+              <span className="hero__initials font-heading">MDF</span>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -71,7 +71,7 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, '#hero')}
           aria-label="Go to top"
         >
-          dwi.dev
+          riyan.dev
         </a>
 
         {/* Desktop nav links */}
